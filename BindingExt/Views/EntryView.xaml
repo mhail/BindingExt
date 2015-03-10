@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:BindingExt;assembly=BindingExt"
+	x:Class="BindingExt.EntryView"
+	>
+	<ContentPage.Content>
+		<ScrollView>
+        	<StackLayout VerticalOptions="Center" HorizontalOptions="Fill">
+        		<Grid MinimumHeightRequest="100" Padding="10">
+	                <Grid.ColumnDefinitions>
+	                  <ColumnDefinition Width="Auto" />
+	                  <ColumnDefinition Width="*" />
+	                </Grid.ColumnDefinitions>
+	                <!---Row 0 -->
+	                <Label Text="Name"
+	                   VerticalOptions="Center"
+	                   Grid.Row="0" Grid.Column="0"
+	                   />
+	                <Entry Text="{local:BindingRef Name}"
+	                   Grid.Row="0" Grid.Column="1"
+	                />
+	                <!---Row 1 -->
+	                <Label Text="Email"
+	                   VerticalOptions="Center"
+	                   Grid.Row="1" Grid.Column="0"
+	                   />
+	                <Entry Text="{local:BindingRef Email}"
+						Keyboard="Email"
+	                   Grid.Row="1" Grid.Column="1"
+	                />
+
+	                <!---Row 2 -->
+	                <Button 
+	                	Text="Submit" 
+	                	Command="{local:BindingRef Submit}" 
+	                	Grid.Row="2" Grid.ColumnSpan="2"
+	                />
+	            </Grid>
+        	</StackLayout>
+        </ScrollView>
+	</ContentPage.Content>
+</ContentPage>
